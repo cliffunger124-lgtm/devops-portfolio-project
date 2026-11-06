@@ -2,6 +2,9 @@
 
 Полный цикл разработки и развертывания веб-приложения: от кода до production-инфраструктуры в Kubernetes.
 
+🔗 **Живой проект:** https://das-devops.site/
+🐳 **Docker Hub:** https://hub.docker.com/repositories/tytsvaga
+
 ## 🏗 Архитектура проекта
 
 ### 1. Приложение (`/app`)
@@ -19,8 +22,9 @@
 *   *В разработке:* Автоматизация создания VPS и настройки инфраструктуры.
 
 ## 🚀 CI/CD
-Настроен пайплайн:
-`git push` → сборка Docker-образа → пуш в Docker Hub → `kubectl set image` (деплой в k3s).
+Настроен пайплайн на базе GitLab CI:
+1.  **Build**: Сборка Docker-образа из папки `app/` и пуш в Docker Hub с тегом коммита.
+2.  **Deploy**: Подключение к VPS по SSH и обновление образа в k3s через `kubectl set image`.
 
 ## 📦 Как запустить локально
 ```bash
