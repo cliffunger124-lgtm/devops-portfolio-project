@@ -34,4 +34,4 @@ deploy-job:
     - ssh-keyscan 79.133.181.40 >> ~/.ssh/known_hosts
   script:
     - echo "--- Деплой в Kubernetes ---"
-    - ssh devops@79.133.181.40 "export KUBECONFIG=/home/devops/.kube/config && kubectl set image deployment/portfolio1 *= $DOCKERHUB_USER/my-portfolio1:$CI_COMMIT_SHORT_SHA"
+    - ssh devops@79.133.181.40 "export KUBECONFIG=/home/devops/.kube/config && kubectl set image deployment/portfolio1 *=$DOCKERHUB_USER/my-portfolio1:$CI_COMMIT_SHORT_SHA"
