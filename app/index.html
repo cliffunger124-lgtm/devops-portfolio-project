@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Финский Вячеслав Михайлович | DevOps Engineer</title>
+    <title>Финский Вячеслав | DevOps Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Фоновая сетка -->
-    <div class="bg-grid"></div>
-
-    <!-- Боковые акценты (только для ПК) -->
-    <div class="side-accent left">// STATUS: ONLINE</div>
-    <div class="side-accent right">// READY TO DEPLOY</div>
+    <!-- Фоновые эффекты -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
 
     <!-- Навигация -->
     <nav class="navbar">
@@ -31,146 +28,113 @@
     <!-- Главный экран -->
     <header class="hero" id="home">
         <div class="hero-content">
-            <p class="greeting">Привет, я</p>
-            <h1 class="name">Финский Вячеслав</h1>
-            <h2 class="title"><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
-            
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="terminal-title">bash - vyacheslav@devops</span>
-                </div>
-                <div class="terminal-body">
-                    <p><span class="prompt">~$</span> cat about_me.txt</p>
-                    <p class="terminal-text">Студент 3 курса ВИВТ по специальности «Информационные системы и программирование». Развиваюсь в направлении DevOps Engineering, автоматизации инфраструктуры и системного администрирования Linux.</p>
-                    <p class="terminal-text">Имею практический опыт самостоятельного проектирования, настройки и развёртывания инфраструктурных решений. Работал с полным циклом доставки приложений: от CI/CD-пайплайнов до развёртывания в Kubernetes.</p>
-                    <p><span class="prompt">~$</span> <span class="cursor">_</span></p>
+            <div class="hero-text">
+                <p class="greeting">Привет, меня зовут</p>
+                <h1 class="name">Финский Вячеслав</h1>
+                <h2 class="title"><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+                <p class="location">📍 Воронеж, Россия | 18 лет</p>
+                <div class="social-links">
+                    <a href="https://t.me/Jiohamogioshue" target="_blank" class="btn">Telegram</a>
+                    <a href="https://github.com/cliffunger124-lgtm" target="_blank" class="btn">GitHub</a>
+                    <a href="https://vk.ru/id585562746" target="_blank" class="btn">VK</a>
                 </div>
             </div>
-
-            <div class="social-links">
-                <a href="https://t.me/Jiohamogioshue" target="_blank">Telegram</a>
-                <a href="https://github.com/cliffunger124-lgtm" target="_blank">GitHub</a>
+            <div class="hero-avatar">
+                <!-- Здесь потом можно вставить <img src="твое_фото.jpg"> -->
+                <div class="avatar-placeholder">ВФ</div>
             </div>
         </div>
     </header>
 
     <main>
+        <!-- Обо мне -->
+        <section id="about" class="section reveal">
+            <h2 class="section-title"><span class="num">01.</span> Обо мне</h2>
+            <div class="glass-card">
+                <p>Студент 3 курса ВИВТ по специальности «Информационные системы и программирование». Активно развиваюсь в DevOps-инженерии. Обладаю практическим опытом построения сквозных CI/CD пайплайнов, развертывания Kubernetes, настройки мониторинга и автоматизации серверов.</p>
+                <p>Свободно работаю в командной строке Linux. Ищу позицию стажера или Junior DevOps Engineer, где смогу применять свои навыки для поддержки и автоматизации инфраструктуры.</p>
+            </div>
+        </section>
+
         <!-- Навыки -->
         <section id="skills" class="section reveal">
-            <h2 class="section-title"><span class="num">01.</span> Технический стек</h2>
+            <h2 class="section-title"><span class="num">02.</span> Ключевые навыки</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Linux & Admin</h3>
-                    <p>Linux (Ubuntu), Bash, Linux CLI, Process Management, File Permissions, systemd, SSH.</p>
+                    <h3>Git</h3>
+                    <p>Ветвление, слияние, разрешение конфликтов, работа с GitHub / GitLab.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Version Control</h3>
-                    <p>Git, GitHub, GitLab, Branching, Merging, Conflict Resolution.</p>
+                    <h3>Linux</h3>
+                    <p>Ubuntu, Bash, Shell Scripting, Systemd, SSH, управление процессами и правами.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Containerization</h3>
-                    <p>Docker, Dockerfile, Docker Compose, Docker Hub, BuildKit, DinD, Container Networking, Volumes.</p>
+                    <h3>Контейнеризация</h3>
+                    <p>Docker, Dockerfile, Docker Compose, Docker Hub, BuildKit, DinD.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Orchestration</h3>
-                    <p>Kubernetes (k3s), kubectl, YAML Manifests, Deployment, Service, Ingress, ConfigMap, Secret.</p>
+                    <h3>Оркестрация</h3>
+                    <p>Kubernetes (k3s), kubectl, YAML, Deployment, Service, Ingress, ConfigMap.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>CI/CD & Automation</h3>
-                    <p>GitLab CI/CD, GitLab Runner, GitHub Actions, Pipelines, Automated Build & Deployment.</p>
+                    <h3>CI/CD</h3>
+                    <p>GitLab CI, GitHub Actions, GitLab Runner, пайплайны сборки и деплоя.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Monitoring</h3>
-                    <p>Prometheus, Grafana, Node Exporter, PromQL, Alertmanager, Telegram Notifications.</p>
+                    <h3>Мониторинг</h3>
+                    <p>Prometheus, Grafana, Node Exporter, PromQL, Alertmanager, логи.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Networking</h3>
-                    <p>TCP/IP, DNS, NAT, CIDR, UFW, Nginx, Traefik, Reverse Proxy, HTTPS, SSL/TLS, Let's Encrypt.</p>
+                    <h3>Сети</h3>
+                    <p>TCP/IP, DNS, NAT, CIDR, UFW, Nginx, Traefik, HTTPS/SSL (Let's Encrypt).</p>
                 </div>
                 <div class="skill-card">
-                    <h3>IaC & Databases</h3>
-                    <p>Ansible (Playbooks, Roles, Jinja2), Terraform (HCL), PostgreSQL, SQL.</p>
+                    <h3>IaC</h3>
+                    <p>Ansible (Playbooks, Roles, Jinja2), Terraform (HCL).</p>
                 </div>
             </div>
         </section>
 
         <!-- Проекты -->
         <section id="projects" class="section reveal">
-            <h2 class="section-title"><span class="num">02.</span> Проектный опыт</h2>
-            
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>01. End-to-End CI/CD Pipeline & Kubernetes Deployment</h3>
-                    <span class="project-type">Личный проект</span>
+            <h2 class="section-title"><span class="num">03.</span> Ключевые проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card glass-card">
+                    <h3>End-to-End CI/CD & Kubernetes</h3>
+                    <p>Развернут кластер k3s на VPS. Настроен пайплайн: git push → сборка образа → пуш в Docker Hub → автоматический деплой на сервер по SSH. Реализована маршрутизация через Ingress и автоматическая выдача SSL-сертификатов.</p>
+                    <div class="tags">
+                        <span>GitLab CI</span><span>Docker</span><span>k3s</span><span>Traefik</span><span>Nginx</span>
+                    </div>
                 </div>
-                <div class="project-tech">
-                    <span>GitLab CI/CD</span><span>Docker</span><span>k3s</span><span>Traefik</span><span>Cert-manager</span><span>Nginx</span><span>VPS</span>
+                <div class="project-card glass-card">
+                    <h3>Стек мониторинга с алертингом</h3>
+                    <p>Поднят стек мониторинга в изолированной Docker-сети. Написаны PromQL-запросы для сбора метрик (CPU, RAM, диск). Созданы дашборды в Grafana и настроены оповещения в Telegram при перегрузке сервера.</p>
+                    <div class="tags">
+                        <span>Prometheus</span><span>Grafana</span><span>Docker Compose</span><span>Telegram API</span>
+                    </div>
                 </div>
-                <p class="project-desc">Самостоятельное построение инфраструктуры для автоматизированной сборки, публикации и развёртывания приложения.</p>
-                <ul class="project-list">
-                    <li>Развернул Kubernetes-кластер на базе k3s на удалённом VPS.</li>
-                    <li>Настроил CI/CD-пайплайн: автоматическая сборка Docker-образов, публикация в Docker Hub и деплой на сервер через SSH.</li>
-                    <li>Настроил GitLab Runner для выполнения CI/CD-задач.</li>
-                    <li>Настроил Ingress-маршрутизацию с использованием Traefik.</li>
-                    <li>Настроил автоматическое получение SSL/TLS-сертификатов Let's Encrypt через Cert-manager.</li>
-                </ul>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>02. Infrastructure Monitoring & Alerting</h3>
+                <div class="project-card glass-card">
+                    <h3>Server Configuration Automation</h3>
+                    <p>Разработана Ansible-роль для установки и настройки веб-сервера. Использованы Jinja2-шаблоны для генерации конфигов, handlers для перезапуска служб. Обеспечена идемпотентность плейбуков.</p>
+                    <div class="tags">
+                        <span>Ansible</span><span>Nginx</span><span>Linux</span>
+                    </div>
                 </div>
-                <div class="project-tech">
-                    <span>Prometheus</span><span>Grafana</span><span>Node Exporter</span><span>Docker Compose</span><span>PromQL</span>
+                <div class="project-card glass-card">
+                    <h3>Multi-Container Web App</h3>
+                    <p>Настроена связка веб-сервера и БД. Использованы Named Volumes для сохранения данных, настроено взаимодействие через user-defined bridge network, секреты вынесены в .env.</p>
+                    <div class="tags">
+                        <span>Docker Compose</span><span>Nginx</span><span>PostgreSQL</span>
+                    </div>
                 </div>
-                <p class="project-desc">Развёртывание системы мониторинга серверной инфраструктуры с централизованным сбором метрик и автоматическим оповещением.</p>
-                <ul class="project-list">
-                    <li>Развернул мониторинговый стек с использованием Docker Compose в изолированной сети.</li>
-                    <li>Настроил сбор метрик CPU, RAM и дискового пространства.</li>
-                    <li>Разработал PromQL-запросы для анализа данных и создал Grafana Dashboards.</li>
-                    <li>Настроил автоматические уведомления в Telegram при превышении пороговых значений.</li>
-                </ul>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>03. Server Configuration Automation with Ansible</h3>
-                </div>
-                <div class="project-tech">
-                    <span>Ansible</span><span>Linux</span><span>Nginx</span><span>Jinja2</span>
-                </div>
-                <p class="project-desc">Разработка системы автоматизации установки и конфигурирования веб-сервера Nginx.</p>
-                <ul class="project-list">
-                    <li>Разработал Ansible Role и Playbooks для автоматизированной установки и настройки Nginx.</li>
-                    <li>Использовал Jinja2 Templates для генерации конфигов и Handlers для перезапуска служб.</li>
-                    <li>Обеспечил идемпотентность задач для безопасного повторного применения конфигурации.</li>
-                </ul>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>04. Multi-Container Web Application</h3>
-                </div>
-                <div class="project-tech">
-                    <span>Docker Compose</span><span>Nginx</span><span>PostgreSQL</span>
-                </div>
-                <p class="project-desc">Развёртывание многоконтейнерного окружения с разделением веб-сервера и базы данных.</p>
-                <ul class="project-list">
-                    <li>Настроил взаимодействие Nginx и PostgreSQL через User-defined Bridge Network.</li>
-                    <li>Настроил Named Volumes для постоянного хранения данных БД.</li>
-                    <li>Вынес конфигурационные параметры и учётные данные в переменные окружения (.env).</li>
-                </ul>
             </div>
         </section>
 
         <!-- Образование -->
         <section id="education" class="section reveal">
-            <h2 class="section-title"><span class="num">03.</span> Образование</h2>
-            <div class="education-card">
-                <h3>Воронежский институт высоких технологий (ВИВТ)</h3>
+            <h2 class="section-title"><span class="num">04.</span> Образование</h2>
+            <div class="glass-card">
+                <h3>ВИВТ (Воронежский институт высоких технологий)</h3>
                 <p class="edu-date">2023 — настоящее время</p>
                 <p>Специальность: «Информационные системы и программирование» (СПО)</p>
                 <p class="edu-status">3 курс, обучение продолжается</p>
@@ -179,7 +143,7 @@
     </main>
 
     <footer>
-     <p>Открыт к предложениям о стажировке и работе | <a href="https://t.me/Jiohamogioshue" target="_blank">Telegram</a></p>
+        <p>Designed & Built by Vyacheslav | <span class="terminal-green">kubectl apply -f life.yml</span></p>
     </footer>
 
     <script src="js/main.js"></script>
