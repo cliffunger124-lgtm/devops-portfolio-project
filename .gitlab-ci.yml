@@ -1,5 +1,6 @@
 stages:
   - build
+  - test
   - deploy
 
 build-job:
@@ -19,6 +20,23 @@ build-job:
     - echo "--- Пуш образа ---"
     - docker push $DOCKERHUB_USER/my-portfolio1:$CI_COMMIT_SHORT_SHA
     - docker push $DOCKERHUB_USER/my-portfolio1:latest
+
+lint-job:
+  stage: test
+  image: node:18-alpine
+  script:
+    - echo "--- Запуск HTML-линтера ---"
+    - cd app
+    - npx htmlhint index.html
+
+smoke-test-job:
+  stage: test
+  image: alpine:latest
+  script:
+    - echo "--- Запуск Smoke-тестов ---"
+    - cd app
+    - chmod +x test.sh
+    - ./test.sh
 
 deploy-job:
   stage: deploy
