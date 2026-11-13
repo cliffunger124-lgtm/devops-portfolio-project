@@ -11,16 +11,23 @@ build-job:
   variables:
     DOCKER_HOST: tcp://localhost:2375
     DOCKER_TLS_CERTDIR: ""
+  cache:
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+      - .docker_cache/
   script:
     - echo "--- Логин в Docker Hub ---"
     - echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USER" --password-stdin
-    - echo "--- Сборка образа ---"
-    - docker build -t $DOCKERHUB_USER/my-portfolio1:$CI_COMMIT_SHORT_SHA ./app
-    - docker tag $DOCKERHUB_USER/my-portfolio1:$CI_COMMIT_SHORT_SHA $DOCKERHUB_USER/my-portfolio1:latest
-    - echo "--- Пуш образа ---"
-    - docker push $DOCKERHUB_USER/my-portfolio1:$CI_COMMIT_SHORT_SHA
-    - docker push $DOCKERHUB_USER/my-portfolio1:latest
-
+    - echo "--- Сборка с кэшем BuildKit ---"
+    - docker buildx create --use --driver docker-container
+    - |
+      docker buildx build \
+        --push \
+        --cache-from type=registry,ref=$DOCKERHUB_USER/my-portfolio-cache:latest \
+        --cache-to type=registry,ref=$DOCKERHUB_USER/my-portfolio-cache:latest,mode=max \
+        -t $DOCKERHUB_USER/my-portfolio1:$CI_COMMIT_SHORT_SHA \
+        -t $DOCKERHUB_USER/my-portfolio1:latest \
+        ./app
 lint-job:
   stage: test
   image: node:18-alpine
