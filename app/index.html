@@ -1,152 +1,42 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Финский Вячеслав | DevOps Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Фоновые эффекты -->
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
-
-    <!-- Навигация -->
-    <nav class="navbar">
-        <div class="logo">~/portfolio</div>
-        <ul class="nav-links">
-            <li><a href="#about">Обо мне</a></li>
-            <li><a href="#skills">Навыки</a></li>
-            <li><a href="#projects">Проекты</a></li>
-            <li><a href="#education">Образование</a></li>
-        </ul>
-    </nav>
-
-    <!-- Главный экран -->
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <p class="greeting">Привет, меня зовут</p>
-                <h1 class="name">Финский Вячеслав</h1>
-                <h2 class="title"><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
-                <p class="location">🌐 UTC+3 (Moscow Time) | 18 лет</p>
-                <div class="social-links">
-                    <a href="https://t.me/Jiohamogioshue" target="_blank" class="btn">Telegram</a>
-                    <a href="https://github.com/cliffunger124-lgtm" target="_blank" class="btn">GitHub</a>
-                    <a href="https://vk.ru/id585562746" target="_blank" class="btn">VK</a>
-                </div>
-            </div>
-            <div class="hero-avatar">
-                <div class="hero-avatar">
-    <img src="avatar.jpg" alt="Фото Вячеслава" class="avatar-placeholder" style="object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Обо мне -->
-        <section id="about" class="section reveal">
-            <h2 class="section-title"><span class="num">01.</span> Обо мне</h2>
-            <div class="glass-card">
-                <p>Студент 3 курса ВИВТ по специальности «Информационные системы и программирование». Активно развиваюсь в DevOps-инженерии. Обладаю практическим опытом построения сквозных CI/CD пайплайнов, развертывания Kubernetes, настройки мониторинга и автоматизации серверов.</p>
-                <p>Свободно работаю в командной строке Linux. Ищу позицию стажера или Junior DevOps Engineer, где смогу применять свои навыки для поддержки и автоматизации инфраструктуры.</p>
-            </div>
-        </section>
-
-        <!-- Навыки -->
-        <section id="skills" class="section reveal">
-            <h2 class="section-title"><span class="num">02.</span> Ключевые навыки</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Git</h3>
-                    <p>Ветвление, слияние, разрешение конфликтов, работа с GitHub / GitLab.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Linux</h3>
-                    <p>Ubuntu, Bash, Shell Scripting, Systemd, SSH, управление процессами и правами.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Контейнеризация</h3>
-                    <p>Docker, Dockerfile, Docker Compose, Docker Hub, BuildKit, DinD.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Оркестрация</h3>
-                    <p>Kubernetes (k3s), kubectl, YAML, Deployment, Service, Ingress, ConfigMap.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>CI/CD</h3>
-                    <p>GitLab CI, GitHub Actions, GitLab Runner, пайплайны сборки и деплоя.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Мониторинг</h3>
-                    <p>Prometheus, Grafana, Node Exporter, PromQL, Alertmanager, логи.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Сети</h3>
-                    <p>TCP/IP, DNS, NAT, CIDR, UFW, Nginx, Traefik, HTTPS/SSL (Let's Encrypt).</p>
-                </div>
-                <div class="skill-card">
-                    <h3>IaC</h3>
-                    <p>Ansible (Playbooks, Roles, Jinja2), Terraform (HCL).</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Проекты -->
-        <section id="projects" class="section reveal">
-            <h2 class="section-title"><span class="num">03.</span> Ключевые проекты</h2>
-            <div class="projects-grid">
-                <div class="project-card glass-card">
-                    <h3>End-to-End CI/CD & Kubernetes</h3>
-                    <p>Развернут кластер k3s на VPS. Настроен пайплайн: git push → сборка образа → пуш в Docker Hub → автоматический деплой на сервер по SSH. Реализована маршрутизация через Ingress и автоматическая выдача SSL-сертификатов.</p>
-                    <div class="tags">
-                        <span>GitLab CI</span><span>Docker</span><span>k3s</span><span>Traefik</span><span>Nginx</span>
-                    </div>
-                </div>
-                <div class="project-card glass-card">
-                    <h3>Стек мониторинга с алертингом</h3>
-                    <p>Поднят стек мониторинга в изолированной Docker-сети. Написаны PromQL-запросы для сбора метрик (CPU, RAM, диск). Созданы дашборды в Grafana и настроены оповещения в Telegram при перегрузке сервера.</p>
-                    <div class="tags">
-                        <span>Prometheus</span><span>Grafana</span><span>Docker Compose</span><span>Telegram API</span>
-                    </div>
-                </div>
-                <div class="project-card glass-card">
-                    <h3>Server Configuration Automation</h3>
-                    <p>Разработана Ansible-роль для установки и настройки веб-сервера. Использованы Jinja2-шаблоны для генерации конфигов, handlers для перезапуска служб. Обеспечена идемпотентность плейбуков.</p>
-                    <div class="tags">
-                        <span>Ansible</span><span>Nginx</span><span>Linux</span>
-                    </div>
-                </div>
-                <div class="project-card glass-card">
-                    <h3>Multi-Container Web App</h3>
-                    <p>Настроена связка веб-сервера и БД. Использованы Named Volumes для сохранения данных, настроено взаимодействие через user-defined bridge network, секреты вынесены в .env.</p>
-                    <div class="tags">
-                        <span>Docker Compose</span><span>Nginx</span><span>PostgreSQL</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Образование -->
-        <section id="education" class="section reveal">
-            <h2 class="section-title"><span class="num">04.</span> Образование</h2>
-            <div class="glass-card">
-                <h3>ВИВТ (Воронежский институт высоких технологий)</h3>
-                <p class="edu-date">2023 — настоящее время</p>
-                <p>Специальность: «Информационные системы и программирование» (СПО)</p>
-                <p class="edu-status">3 курс, обучение продолжается</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Designed & Built by Vyacheslav | <span class="terminal-green">kubectl apply -f life.yml</span></p>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d0c"><title>Финский Вячеслав — Junior DevOps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d0c;--panel:#121714;--line:#29352d;--text:#edf2ed;--muted:#aab6ad;--soft:#cbd4cd;--a:#b6f36b;--mono:"DM Mono",monospace;--sans:"Manrope",system-ui,sans-serif;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(146,196,91,.10),transparent 34%),var(--bg);color:var(--text);font:16px/1.7 var(--sans)}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.mono,.eyebrow,.nav a,.tag,.meta,.status{font-family:var(--mono)}
+header{position:sticky;top:0;z-index:5;background:#0b0d0ceF;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;font-size:17px}.brand span,h1 span{color:var(--a)}.navlinks{display:flex;gap:25px}.nav a{font-size:13px;color:var(--muted)}.nav a:hover{color:var(--a)}
+.eyebrow{font-size:13px;color:var(--a);letter-spacing:.12em;text-transform:uppercase}.hero{padding:88px 0 72px;display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center}
+h1{font-size:clamp(44px,6.5vw,74px);line-height:1.05;letter-spacing:-.06em;margin:18px 0}.lead{font-size:19px;color:var(--soft);max-width:650px;margin:0 0 28px}
+.actions,.socials{display:flex;gap:11px;flex-wrap:wrap}.btn,.social{border:1px solid var(--line);border-radius:9px;padding:11px 17px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;transition:.2s}.btn.primary{background:var(--a);color:#10150d;border-color:var(--a)}.btn:hover,.social:hover{transform:translateY(-2px);border-color:var(--a)}
+.profile{padding:18px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#1a241c,#101512)}.avatar{height:255px;border-radius:11px;overflow:hidden;background:linear-gradient(140deg,#2a3a2c,#121a14);display:grid;place-items:center}.avatar img{width:100%;height:100%;object-fit:cover}.placeholder{text-align:center;color:#d7e6d2;font:14px var(--mono)}.profilefoot{display:flex;justify-content:space-between;gap:10px;padding:15px 2px 0;font-size:14px}.status{font-size:12px;color:var(--a)}
+.ticker{border-block:1px solid var(--line);padding:15px 0;text-align:center;color:#d0d9d1;font:14px var(--mono);letter-spacing:.04em}.ticker b{color:var(--a);padding:0 12px}
+section{padding:78px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-.05em;margin:7px 0 0}.note{max-width:400px;color:var(--muted);font-size:15px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel,.project{border:1px solid var(--line);border-radius:13px;background:var(--panel);padding:25px}.panel p,.project p{color:var(--soft);font-size:16px;line-height:1.8;margin:0}.facts{display:grid;grid-template-columns:1fr 1fr;gap:11px}.fact{padding:16px;border:1px solid #ffffff0b;border-radius:9px;background:#171e19}.fact small{display:block;color:var(--muted);font:12px var(--mono);margin-bottom:6px}.fact strong{font-size:16px}
+.skills,.ptags{display:flex;flex-wrap:wrap;gap:10px}.tag{font-size:14px;color:#dce5dd;border:1px solid #354238;background:#121914;border-radius:7px;padding:8px 12px}.tag.hot{color:#dcffb6;border-color:#b6f36b66}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:15px}.project{background:linear-gradient(145deg,#131915,#0f1311);transition:.2s}.project:hover{transform:translateY(-3px);border-color:#b6f36b88}.ptop{display:flex;justify-content:space-between;gap:12px;margin-bottom:16px}.meta{font-size:12px;color:var(--muted)}.num{font:13px var(--mono);color:var(--a)}h3{font-size:21px;line-height:1.35;margin:0 0 10px}.project p{font-size:15px;margin-bottom:17px}.ptags{gap:7px}.ptags .tag{font-size:12px;padding:5px 8px}
+.approach{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.approach .panel{padding:21px}.approach h3{font-size:18px}.approach p{font-size:15px}
+.education{display:flex;justify-content:space-between;align-items:center;gap:15px}.education p{color:var(--muted);font-size:15px;margin:5px 0 0}.year{font:13px var(--mono);color:var(--a)}
+.contact{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:32px;background:linear-gradient(110deg,#19231a,#111613);border:1px solid #354637;border-radius:15px}.contact p{color:var(--muted);font-size:15px;margin:9px 0 0}.social{font-size:14px;min-width:100px;border-color:#455247;color:#edf3ed}
+footer{padding:25px 0 32px;border-top:1px solid var(--line);font:12px var(--mono);color:#87948a}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:780px){.wrap{width:calc(100% - 32px)}.hero{grid-template-columns:1fr;padding:60px 0 50px;gap:28px}.avatar{height:270px}section{padding:58px 0}.head{display:block}.note{margin-top:10px}.grid2,.projects{grid-template-columns:1fr}.approach{grid-template-columns:1fr}.contact{display:block;padding:25px}.socials{margin-top:20px}}
+@media(max-width:450px){.navlinks{display:none}.lead{font-size:17px}.fact{padding:12px}.fact strong{font-size:14px}}
+</style></head><body>
+<header><div class="wrap nav"><a class="brand" href="#top">VYACHESLAV<span>.</span></a><nav class="navlinks"><a href="#about">Обо мне</a><a href="#stack">Навыки</a><a href="#projects">Проекты</a><a href="#contacts">Контакты</a></nav></div></header>
+<main id="top"><div class="wrap hero"><div><div class="eyebrow">Junior DevOps Engineer · Portfolio</div><h1>Финский Вячеслав<br><span>Михайлович</span></h1><p class="lead">Развиваюсь в DevOps и инфраструктуре: автоматизация сборки и доставки приложений, контейнеризация, Kubernetes и мониторинг. Ищу стажировку или позицию Junior DevOps Engineer.</p><div class="actions"><a class="btn primary" href="#projects">Посмотреть проекты ↘</a><a class="btn" href="#contacts">Связаться</a></div></div>
+<aside class="profile"><div class="avatar"><img src="avatar.jpg" alt="Фотография Вячеслава" onerror="this.remove();this.parentNode.innerHTML='<div class=&quot;placeholder&quot;>ТВОЁ ФОТО<br><small>добавь avatar.jpg рядом с index.html</small></div>'"></div><div class="profilefoot"><strong>Infrastructure · Automation</strong><span class="status">● OPEN TO WORK</span></div></aside></div>
+<div class="ticker">LINUX <b>✳</b> DOCKER <b>✳</b> KUBERNETES <b>✳</b> CI/CD <b>✳</b> ANSIBLE <b>✳</b> PROMETHEUS <b>✳</b> GRAFANA</div>
+<section id="about"><div class="wrap"><div class="head"><div><div class="eyebrow">01 / About</div><h2>Обо мне</h2></div><div class="note">Интересуюсь тем, как устроена инфраструктура и как сделать доставку приложений предсказуемой и автоматизированной.</div></div><div class="grid2"><div class="panel"><p>Я студент 3 курса ВИВТ, развиваюсь в направлении DevOps. Практикуюсь на собственных проектах: настраиваю CI/CD-процессы, разворачиваю приложения в контейнерах и Kubernetes, изучаю мониторинг и автоматизацию инфраструктуры. Предпочитаю разбираться в принципах работы инструментов и проверять знания на практике.</p></div><div class="facts"><div class="fact"><small>ОБРАЗОВАНИЕ</small><strong>ВИВТ · 3 курс</strong></div><div class="fact"><small>НАПРАВЛЕНИЕ</small><strong>DevOps / Cloud</strong></div><div class="fact"><small>УРОВЕНЬ</small><strong>Junior / Intern</strong></div><div class="fact"><small>ФОКУС</small><strong>Automation</strong></div></div></div></div></section>
+<section id="stack"><div class="wrap"><div class="head"><div><div class="eyebrow">02 / Toolkit</div><h2>Технологический стек</h2></div><div class="note">Инструменты, с которыми работаю в учебных и практических проектах.</div></div><div class="skills"><span class="tag hot">Linux</span><span class="tag hot">Docker</span><span class="tag hot">Kubernetes</span><span class="tag hot">CI/CD</span><span class="tag">Git</span><span class="tag">GitLab CI</span><span class="tag">GitHub Actions</span><span class="tag">Ansible</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Node Exporter</span><span class="tag">Alertmanager</span><span class="tag">Nginx</span><span class="tag">Traefik</span><span class="tag">PostgreSQL</span><span class="tag">Networking</span><span class="tag">Bash</span><span class="tag">YAML</span><span class="tag">IaC</span><span class="tag">SSH</span></div></div></section>
+<section id="projects"><div class="wrap"><div class="head"><div><div class="eyebrow">03 / Selected work</div><h2>Практические проекты</h2></div><div class="note">Инфраструктурные проекты, в которых отрабатываю типовые DevOps-задачи.</div></div><div class="projects">
+<article class="project"><div class="ptop"><span class="num">PROJECT_01</span><span class="meta">CI/CD · Kubernetes</span></div><h3>End-to-End CI/CD & Kubernetes Deployment</h3><p>Настройка конвейера доставки приложения: GitLab CI, сборка Docker-образа, публикация в Docker Hub и деплой на VPS по SSH. Для входящего трафика использую Traefik, для TLS — cert-manager и Let's Encrypt. Также прорабатываю проверки состояния приложения.</p><div class="ptags"><span class="tag">GitLab CI</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Traefik</span><span class="tag">cert-manager</span></div></article>
+<article class="project"><div class="ptop"><span class="num">PROJECT_02</span><span class="meta">Monitoring</span></div><h3>Monitoring & Observability</h3><p>Учебный мониторинг инфраструктуры на Prometheus и Grafana. Node Exporter собирает метрики сервера, PromQL используется для запросов и анализа, Alertmanager — для настройки уведомлений, в том числе в Telegram.</p><div class="ptags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Node Exporter</span><span class="tag">PromQL</span><span class="tag">Alertmanager</span></div></article>
+<article class="project"><div class="ptop"><span class="num">PROJECT_03</span><span class="meta">Configuration Management</span></div><h3>Ansible: автоматизация Nginx</h3><p>Создание Ansible-роли для установки и настройки Nginx. Использую шаблоны Jinja2 и handlers для применения изменений; изучаю идемпотентность и повторяемое управление конфигурацией.</p><div class="ptags"><span class="tag">Ansible</span><span class="tag">YAML</span><span class="tag">Jinja2</span><span class="tag">Nginx</span></div></article>
+<article class="project"><div class="ptop"><span class="num">PROJECT_04</span><span class="meta">Containers</span></div><h3>Multi-container приложение в Docker Compose</h3><p>Контейнерное окружение с Nginx и PostgreSQL. Настроены bridge-сеть, именованный том для данных базы и переменные окружения через .env. Практикую разделение конфигурации и данных приложения.</p><div class="ptags"><span class="tag">Docker Compose</span><span class="tag">Nginx</span><span class="tag">PostgreSQL</span><span class="tag">Volumes</span><span class="tag">Networking</span></div></article>
+</div></div></section>
+<section><div class="wrap"><div class="head"><div><div class="eyebrow">04 / Mindset</div><h2>Инженерный подход</h2></div></div><div class="approach"><div class="panel"><h3>Автоматизация</h3><p>Стараюсь заменять повторяющиеся ручные действия воспроизводимыми сценариями и пайплайнами.</p></div><div class="panel"><h3>Наблюдаемость</h3><p>Изучаю метрики, логи и оповещения, чтобы понимать состояние сервисов и находить причины проблем.</p></div><div class="panel"><h3>Безопасность</h3><p>Учитываю управление секретами, минимальные привилегии и безопасную конфигурацию сервисов.</p></div></div></div></section>
+<section><div class="wrap"><div class="head"><div><div class="eyebrow">05 / Education</div><h2>Образование</h2></div></div><div class="panel education"><div><h3>ВИВТ — Воронежский институт высоких технологий</h3><p>Студент 3 курса</p></div><span class="year">В ПРОЦЕССЕ</span></div></div></section>
+<section id="contacts"><div class="wrap"><div class="contact"><div><div class="eyebrow">06 / Get in touch</div><h2>Давайте обсудим<br>возможности</h2><p>Открыт к стажировкам, Junior-позициям и профессиональному общению.</p></div><div class="socials">
+<!-- Замени ссылки на свои реальные профили -->
+<a class="social" href="https://vk.com/" target="_blank" rel="noreferrer">VK ↗</a><a class="social" href="https://t.me/" target="_blank" rel="noreferrer">Telegram ↗</a><a class="social" href="https://max.ru/" target="_blank" rel="noreferrer">MAX ↗</a><a class="social" href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a><a class="social" href="mailto:your.email@example.com">Email ↗</a></div></div></div></section>
+</main><footer><div class="wrap"><span>© 2026 FINskiy Vyacheslav</span><span>Built with curiosity & consistency.</span></div></footer></body></html>
